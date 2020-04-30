@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Demo</title>
+<style>
+.preview {
+width:1000px;
+height:500}
+
+.thumb {
+width:105px;
+margin-right:3px;}
+
+.normal {
+border:3px solid #000000;}
+
+.selected {
+border:3px solid #ff0000;}
+</style>
+</head>
+<body>
+<img id="0" class="preview normal" src="" alt="preview" /><br />
+<img id="1" class="thumb normal" src="Pictures/photo0.jpg" alt="mountains" onclick="preview(this)"/>
+<img id="2" class="thumb normal" src="Pictures/photo1.jpg" alt="desert" onclick="preview(this)"/>
+<img id="3" class="thumb normal" src="Pictures/photo2.jpg" alt="highway" onclick="preview(this)"/>
+<img id="3" class="thumb normal" src="Pictures/photo3.jpg" alt="highway" onclick="preview(this)"/>
+<img id="3" class="thumb normal" src="Pictures/photo4.png" alt="highway" onclick="preview(this)"/>
+<img id="3" class="thumb normal" src="Pictures/photo5.jpg" alt="highway" onclick="preview(this)"/>
+<img id="3" class="thumb normal" src="Pictures/photo6.jpg" alt="highway" onclick="preview(this)"/>
+<img id="3" class="thumb normal" src="Pictures/photo7.png" alt="highway" onclick="preview(this)"/>
+<img id="3" class="thumb normal" src="Pictures/photo8.jpg" alt="highway" onclick="preview(this)"/>
+<img id="3" class="thumb normal" src="Pictures/photo9.jpg" alt="highway" onclick="preview(this)"/>
+<script>
+
+    var lastImg = 1; //Set initial thumbnail and preview
+    document.getElementById(0).src = document.getElementById(lastImg).src;
+    document.getElementById(lastImg).className = "thumb selected";
+
+    function preview(img) {
+        document.getElementById(lastImg).className = "thumb normal";
+        img.className = "thumb selected";
+        document.getElementById(0).src = img.src;
+        lastImg = img.id
+    }
+</script>
+</body>
+</html>
